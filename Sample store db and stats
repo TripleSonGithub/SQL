@@ -1,0 +1,19 @@
+
+-- creating a database that contains a list of items in the store including their quantity and color 
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, color TEXT);
+
+INSERT INTO store VALUES
+(1, "Shirts", 450, 15, "Brown"),
+(2, "Trousers", 346,10 , "Black"),
+(3, "Jackets", 1560, 5, "Red"),
+(4, "Shoes", 565, 3, "Black"),
+(5, "Socks", 178, 9, "Yellow");
+
+--Ordering items by Price
+SELECT name, color, price FROM store ORDER BY price;
+
+
+-- Grouping items by color and listing the total price
+SELECT color, SUM(price)  FROM store GROUP BY color;
+
